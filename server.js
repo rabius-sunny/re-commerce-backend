@@ -52,7 +52,7 @@ client.connect(err => {
     // Adding a new product
     app.post('/addProduct', (req, res) => {
         const product = req.body
-        productCollection.insertOne(product)
+        productCollection.insertMany(product)
             .then(res => res.send(res.insertedCount))
     })
 
