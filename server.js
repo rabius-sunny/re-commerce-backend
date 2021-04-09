@@ -20,6 +20,7 @@ app.get('/', (req, res) => {
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
     const productCollection = client.db("ecommerce-with-server").collection("ecommerceBackend");
+    const orderCollection = client.db("ecommerce-with-server").collection("orders");
     console.log('database connected')
 
     // API for different operations
